@@ -1,0 +1,43 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "upgrade-insecure-requests"
+
+# Enable HTTP/2 server push for faster initial page loads
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Link = "</src/main.tsx>; rel=preload; as=script"
+
+# Browser caching
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 301 redirects from www to non-www or vice versa (choose one)
+[[redirects]]
+  from = "https://moraesconsertodetv.com.br/*"
+  to = "https://www.moraesconsertodetv.com.br/:splat"
+  status = 301
+  force = true
+
+# Create a redirect for 404 errors to go to home page
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
