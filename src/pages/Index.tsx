@@ -8,12 +8,15 @@ import GetNinjasReviews from "../components/GetNinjasReviews";
 import GoogleReviewsSection from "../components/GoogleReviewsSection";
 
 const Index = () => (
-  <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+  // <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+  <div className="min-h-screen bg-gray-50 flex flex-col font-sans overflow-x-hidden w-full">
     <TopBar />
-    <main className="flex-1 flex flex-col">
+    {/* <main className="flex-1 flex flex-col"> */}
+    <main className="flex-1 flex flex-col w-full overflow-x-hidden">
       <HeroSection />
       {/* INÍCIO seção Campinas e horário de atendimento */}
-      <section className="bg-blue-100 py-6 mt-2 text-center flex flex-col items-center">
+      {/* <section className="bg-blue-100 py-6 mt-2 text-center flex flex-col items-center"> */}
+      <section className="bg-blue-100 py-6 mt-2 text-center flex flex-col items-center w-full px-2">
         <span className="block bg-yellow-300/90 text-blue-900 font-bold rounded-full text-sm md:text-lg px-5 py-2 mb-2 shadow">
           ATENDEMOS TODA REGIÃO DE CAMPINAS
         </span>
@@ -24,19 +27,23 @@ const Index = () => (
       </section>
       {/* FIM seção Campinas e horário */}
       {/* Ajuste: Remover padding excessiva acima da próxima seção, adicionar espaçamento entre seções */}
-      <section className="section-padding mt-6 mb-2">
+      {/* <section className="section-padding mt-6 mb-2"> */}
+      <section className="section-padding mt-6 mb-2 w-full">
         <ServicesSection />
       </section>
-      <section className="bg-white py-8 mt-0 mb-4">
+      {/* <section className="bg-white py-8 mt-0 mb-4"> */}
+      <section className="bg-white py-8 mt-0 mb-4 w-full">
         <BrandsSection />
       </section>
       <GoogleReviewsSection />
       <GetNinjasReviews />
-      <section className="section-padding mt-4">
+      {/* <section className="section-padding mt-4"> */}
+      <section className="section-padding mt-4 w-full">
         <WhyChooseUsSection />
       </section>
     </main>
-    <footer className="mt-8 py-4 bg-gray-100 text-sm text-gray-500 text-center">
+    {/* <footer className="mt-8 py-4 bg-gray-100 text-sm text-gray-500 text-center"> */}
+    <footer className="mt-8 py-4 bg-gray-100 text-sm text-gray-500 text-center w-full">
       &copy; {new Date().getFullYear()} Moraes Conserto de TV. Todos os direitos reservados.
     </footer>
   </div>
